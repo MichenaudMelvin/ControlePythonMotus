@@ -61,11 +61,13 @@ def tourJoueur(motMystere):
 
 
 
-
-
+def lettresCommunes(motJoueur, motMystere):
+	print("\n")
+	for i in range(0,6):
+	lettreCommune = motMystere[i]
 	for j in range(0,6):
 		if motJoueur[j] == lettreCommune:
-			print(Back.YELLOW + Fore.BLACK + lettreCommune, end="")
+			print(Back.YELLOW, lettreCommune, end="", sep="")
 
 	def lettresMalPlacees(motJoueur,motMystere):
 		#v0
@@ -74,14 +76,14 @@ def tourJoueur(motMystere):
 				print("indice de la lettre = ", i)
 """
 
+"""
 def lettresMalPlacees(motJoueur, motMystere):
 	#v1 / totoro = tor
 	for i in range(0,6):
 		listeLettre = motMystere
 		if listeLettre == motJoueur[i]:
 			print(listeLettre)
-		
-
+"""
 
 def testVictoire(motJoueur, motMystere):
 	if motJoueur == motMystere:
@@ -111,7 +113,7 @@ while tour < 9 and victoire != True:
 	print(Style.RESET_ALL)
 	print("\nTour n°", tour, sep="")
 	motJoueur = tourJoueur(motMystere)
-	lettresMalPlacees(motJoueur, motMystere)
+	#lettresMalPlacees(motJoueur, motMystere)
 	victoire = testVictoire(motJoueur, motMystere)
 	tour = tour + 1
 
