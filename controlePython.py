@@ -7,7 +7,6 @@ import random
 def tourJoueur(motMystere):
 	print(Style.RESET_ALL)
 	motJoueur = input("Entrez un mot : ")
-	print(motMystere)
 	if len(motJoueur) > 6:
 		print("Entrez un mot de 6 lettres")
 	if len(motJoueur) < 6:
@@ -52,6 +51,9 @@ def tourJoueur(motMystere):
 	si lettre commune apparait dans motJoueur alors :
 		print la lettre en question (et background jaune)
 
+str : atouts
+compter le nombre de lettre (a:1, t:2, o:1, u:1, s:1) (t:2, o:3, r:1)
+
 	si "t" deja présent dans str:
 		ne rien faire
 	sinon:
@@ -62,8 +64,8 @@ def tourJoueur(motMystere):
 
 
 	for j in range(0,6):
-				if motJoueur[j] == lettreCommune:
-					print(Back.YELLOW + Fore.BLACK + lettreCommune, end="")
+		if motJoueur[j] == lettreCommune:
+			print(Back.YELLOW + Fore.BLACK + lettreCommune, end="")
 """
 """
 	def lettresMalPlacees(motJoueur,motMystere):
@@ -89,13 +91,22 @@ def testVictoire(motJoueur, motMystere):
 		victoire = False
 	return victoire
 
+def regles():
+	print("+---------------------------------------------------------------+")
+	print("|Rouge = lettre présente dans le mot et à la bonne place        |")
+	print("|Jaune = lettre présente dans le mot, mais pas à la bonne place |")
+	print("|Bleu = lettre non présente dans le mot                         |")
+	print("|                                                               |")
+	print("|Chosisez uniquement des mots de 6 lettres                      |")
+	print("+---------------------------------------------------------------+", end="")
+
 #main program
 listeDeMot = ["castor","cinema","citron","cypres","basile","totoro","atouts","romain","bateau","macron"]
 motAleatoire = random.randint(0,9)
-motMystere = listeDeMot[6]
+motMystere = listeDeMot[motAleatoire]
 tour = 1
 victoire = False
-print("motMystere = ", motMystere)
+regles()
 
 while tour < 9 and victoire != True:
 	print(Style.RESET_ALL)
