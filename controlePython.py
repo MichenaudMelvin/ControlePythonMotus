@@ -32,11 +32,12 @@ listeDeMot = ["castor","cinema","citron","cypres","basile","totoro","atouts","ro
 motAleatoire = random.randint(0,9)
 motMystere = listeDeMot[motAleatoire]
 tour = 1
+victoire = False
 print("motMystere = ", motMystere)
 
-while tour < 9:
+while tour < 9 and victoire != True:
 	print(Style.RESET_ALL)
-	print("Tour n°", tour)
+	print("Tour n°", tour, sep="")
 	motJoueur = tourJoueur(motMystere)
 	victoire = testVictoire(motJoueur, motMystere)
 	tour = tour + 1
@@ -44,7 +45,7 @@ while tour < 9:
 print(Style.RESET_ALL)
 
 if victoire == False:
-	print("\nPerdu ! le mot était : ", motMystere)
+	print("\nPerdu ! Le mot était : ", motMystere)
 if victoire == True:
 	print("\nGagné !")
 input()
