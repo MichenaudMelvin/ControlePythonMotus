@@ -27,9 +27,7 @@ def lettresCommunes(motJoueur, motMystere):
 		lettreCommune = motMystere[i]
 		for j in range(0,6):
 			if motJoueur[j] == lettreCommune:
-				print(Back.YELLOW, lettreCommune, end="", sep="")
-			if motJoueur[j] != lettreCommune:
-				print(Back.BLUE, lettreCommune, end="", sep="")
+				print(Back.YELLOW, Fore.BLACK, motJoueur[j], end="", sep="")
 
 def testVictoire(motJoueur, motMystere):
 	if motJoueur == motMystere:
