@@ -65,10 +65,22 @@ def tourJoueur(motMystere):
 				if motJoueur[j] == lettreCommune:
 					print(Back.YELLOW + Fore.BLACK + lettreCommune, end="")
 """
+"""
+	def lettresMalPlacees(motJoueur,motMystere):
+		#v0
+		for i in range(0,6):
+			if motMystere[i] == "t":
+				print("indice de la lettre = ", i)
+"""
 
 def lettresMalPlacees(motJoueur,motMystere):
-	#v0
+	#v1 / totoro = tor
+	listeDeLettre = [""]
 	for i in range(0,6):
+		listeDeLettre.append(motMystere[i])
+		
+		listeDeLettre
+		print(listeDeLettre)
 		if motMystere[i] == "t":
 			print("indice de la lettre = ", i)
 
