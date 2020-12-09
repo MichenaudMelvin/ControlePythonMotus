@@ -18,6 +18,7 @@ def tourJoueur(motMystere):
 				print(Back.RED + motJoueur[i], end="")
 			else:
 				print(Back.BLUE + motJoueur[i], end="")
+	return motJoueur
 
 def testVictoire(motJoueur, motMystere):
 	if motJoueur == motMystere:
@@ -36,11 +37,14 @@ print("motMystere = ", motMystere)
 while tour < 9:
 	print(Style.RESET_ALL)
 	print("Tour n°", tour)
-	tourJoueur(motMystere)
-	testVictoire(motJoueur, motMystere)
+	motJoueur = tourJoueur(motMystere)
+	victoire = testVictoire(motJoueur, motMystere)
 	tour = tour + 1
 
+print(Style.RESET_ALL)
+
 if victoire == False:
-	input("Perdu ! le mot était : ", motMystere)
+	print("\nPerdu ! le mot était : ", motMystere)
 if victoire == True:
-	input("Gagné !")
+	print("\nGagné !")
+input()
