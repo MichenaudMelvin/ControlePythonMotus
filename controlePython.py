@@ -73,16 +73,13 @@ def tourJoueur(motMystere):
 				print("indice de la lettre = ", i)
 """
 
-def lettresMalPlacees(motJoueur,motMystere):
+def lettresMalPlacees(motJoueur, motMystere):
 	#v1 / totoro = tor
-	listeDeLettre = [""]
 	for i in range(0,6):
-		listeDeLettre.append(motMystere[i])
+		listeLettre = motMystere
+		if listeLettre == motJoueur[i]:
+			print(listeLettre)
 		
-		listeDeLettre
-		print(listeDeLettre)
-		if motMystere[i] == "t":
-			print("indice de la lettre = ", i)
 
 
 def testVictoire(motJoueur, motMystere):
@@ -104,7 +101,7 @@ while tour < 9 and victoire != True:
 	print(Style.RESET_ALL)
 	print("\nTour n°", tour, sep="")
 	motJoueur = tourJoueur(motMystere)
-	lettresMalPlacees(motJoueur,motMystere)
+	lettresMalPlacees(motJoueur, motMystere)
 	victoire = testVictoire(motJoueur, motMystere)
 	tour = tour + 1
 
