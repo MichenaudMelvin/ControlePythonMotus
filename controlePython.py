@@ -51,8 +51,8 @@ def tourJoueur(motMystere):
 	si lettre commune apparait dans motJoueur alors :
 		print la lettre en question (et background jaune)
 
-str : atouts
-compter le nombre de lettre (a:1, t:2, o:1, u:1, s:1) (t:2, o:3, r:1)
+	str : atouts
+	compter le nombre de lettre (a:1, t:2, o:1, u:1, s:1) (t:2, o:3, r:1)
 
 	si "t" deja présent dans str:
 		ne rien faire
@@ -66,8 +66,7 @@ compter le nombre de lettre (a:1, t:2, o:1, u:1, s:1) (t:2, o:3, r:1)
 	for j in range(0,6):
 		if motJoueur[j] == lettreCommune:
 			print(Back.YELLOW + Fore.BLACK + lettreCommune, end="")
-"""
-"""
+
 	def lettresMalPlacees(motJoueur,motMystere):
 		#v0
 		for i in range(0,6):
