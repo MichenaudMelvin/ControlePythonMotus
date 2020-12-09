@@ -20,14 +20,58 @@ def tourJoueur(motMystere):
 				print(Back.BLUE + motJoueur[i], end="")
 	return motJoueur
 
+"""
+	def lettresCommunes(motJoueur, motMystere):
+		print("\n")
+		for i in range(0,6):
+			listeLettre = motMystere[i]
+			
+			ici liste lettre =
+			a
+			t
+			o
+			u
+			t
+			s
+			résultat voulu =
+			a
+			t
+			o
+			u
+			s
+			
+			if listeLettre == motMystere[i]:
+				print(motMystere[i])
 
-def lettresCommunes(motJoueur, motMystere):
-	print("\n")
+			#atouts = atous
+			#totoro = tor
+			
+
+
+
+	si lettre commune apparait dans motJoueur alors :
+		print la lettre en question (et background jaune)
+
+	si "t" deja présent dans str:
+		ne rien faire
+	sinon:
+		lettreDansLeMot = t
+
+
+
+
+
+	for j in range(0,6):
+				if motJoueur[j] == lettreCommune:
+					print(Back.YELLOW + Fore.BLACK + lettreCommune, end="")
+"""
+
+def lettresMalPlacees(motJoueur,motMystere):
+	#v0
 	for i in range(0,6):
-		lettreCommune = motMystere[i]
-		for j in range(0,6):
-			if motJoueur[j] == lettreCommune:
-				print(Back.YELLOW, Fore.BLACK, motJoueur[j], end="", sep="")
+		if motMystere[i] == "t":
+			print("indice de la lettre = ", i)
+
 
 def testVictoire(motJoueur, motMystere):
 	if motJoueur == motMystere:
@@ -39,7 +83,7 @@ def testVictoire(motJoueur, motMystere):
 #main program
 listeDeMot = ["castor","cinema","citron","cypres","basile","totoro","atouts","romain","bateau","macron"]
 motAleatoire = random.randint(0,9)
-motMystere = listeDeMot[motAleatoire]
+motMystere = listeDeMot[6]
 tour = 1
 victoire = False
 print("motMystere = ", motMystere)
@@ -48,7 +92,7 @@ while tour < 9 and victoire != True:
 	print(Style.RESET_ALL)
 	print("\nTour n°", tour, sep="")
 	motJoueur = tourJoueur(motMystere)
-	lettresCommunes(motJoueur, motMystere)
+	lettresMalPlacees(motJoueur,motMystere)
 	victoire = testVictoire(motJoueur, motMystere)
 	tour = tour + 1
 
