@@ -20,6 +20,10 @@ def tourJoueur(motMystere):
 				print(Back.BLUE + motJoueur[i], end="")
 	return motJoueur
 
+"""
+def lettresMalPlacees(motJoueur, motMystere):
+"""
+
 def testVictoire(motJoueur, motMystere):
 	if motJoueur == motMystere:
 		victoire = True
@@ -37,7 +41,7 @@ print("motMystere = ", motMystere)
 
 while tour < 9 and victoire != True:
 	print(Style.RESET_ALL)
-	print("Tour n°", tour, sep="")
+	print("\nTour n°", tour, sep="")
 	motJoueur = tourJoueur(motMystere)
 	victoire = testVictoire(motJoueur, motMystere)
 	tour = tour + 1
